@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/se.remember.model/src"
+    creationSubmenus="true" editDirectory="/se.remember.model.edit/src" editorDirectory="/se.remember.model.editor/src"
+    modelPluginID="se.remember.model" modelName="Remember" modelPluginClass="" editPluginClass="se.remember.provider.RememberEditPlugin"
+    editorPluginClass="se.remember.presentation.RememberEditorPlugin" testSuiteClass="se.remember.tests.RememberAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    providerRootExtendsClass="" editPluginID="se.remember.model.edit" editorPluginID="se.remember.model.editor"
+    language="" runtimePlatform="RCP">
+  <foreignModel>se.remember.ecore</foreignModel>
+  <genPackages prefix="Remember" basePackage="se" disposableProviderFactory="true"
+      ecorePackage="se.remember.ecore#/">
+    <genDataTypes ecoreDataType="se.remember.ecore#//gregorianCalendar"/>
+    <genClasses ecoreClass="se.remember.ecore#//Folder">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference se.remember.ecore#//Folder/Tasks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference se.remember.ecore#//Folder/folders"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference se.remember.ecore#//Folder/parent"/>
+    </genClasses>
+    <genClasses ecoreClass="se.remember.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Task/taskId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Task/priority"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Task/status"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Task/budget"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Task/text"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference se.remember.ecore#//Task/parent"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="se.remember.ecore#//Node">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/nodeId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/nodeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/parentNodeId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/parentNodeType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/sequence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/dateCreated"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/dateModified"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//Node/markedForDeletion"/>
+    </genClasses>
+    <genClasses ecoreClass="se.remember.ecore#//NextNodeId">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute se.remember.ecore#//NextNodeId/nextNodeId"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
